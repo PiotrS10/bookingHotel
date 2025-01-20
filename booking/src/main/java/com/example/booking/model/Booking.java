@@ -33,45 +33,30 @@ public class Booking {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
 
     public String getHotelName() {
         return hotelName;
     }
 
-    public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
-    }
 
     public String getGuestName() {
         return guestName;
     }
 
-    public void setGuestName(String guestName) {
-        this.guestName = guestName;
-    }
 
     public String getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(String checkInDate) {
-        this.checkInDate = checkInDate;
-    }
 
     public String getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(String checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
 
     public static Booking of(BookingRequest bookingRequest) {
         return new Booking(
-                UUID.randomUUID(),  // Generowanie UUID
+                UUID.randomUUID(),
                 bookingRequest.getHotelName(),
                 bookingRequest.getGuestName(),
                 bookingRequest.getCheckInDate(),

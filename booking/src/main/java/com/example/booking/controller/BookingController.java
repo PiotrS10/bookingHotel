@@ -4,7 +4,6 @@ import com.example.booking.dto.BookingRequest;
 import com.example.booking.dto.BookingResponse;
 import com.example.booking.model.Booking;
 import com.example.booking.service.BookingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,15 +13,15 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/bookings")
+@RequestMapping("/api/v1/bookings")
 public class BookingController {
 
     private final BookingService bookingService;
 
-    @Autowired
     public BookingController(BookingService bookingService) {
         this.bookingService = bookingService;
     }
+
 
     @GetMapping
     public ResponseEntity<List<BookingResponse>> getAllBookings() {
